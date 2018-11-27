@@ -1,0 +1,2 @@
+C:\Users\megry\OneDrive\Documents\RPSLS.cs\RPSLS.cs\obj\Debug\RPSLS.cs.csprojAssemblyReference.cache
+C:\Users\megry\OneDrive\Documents\RPSLS.cs\RPSLS.cs\obj\Debug\RPSLS.cs.csproj.CoreCompileInputs.cache

@@ -1,0 +1,34 @@
+1. display rules
+2.input player name
+3.single or multi player? - human vs human or human vs computer (random gesture selection for computer) 
+4.choose gesture 
+5.compare gestures
+6.determine round winner
+7.determine game winner - if there isn't a winner loop steps 4 to 7 until winner is choosen
+
+Player (parent class)
+Member variables:
+	string chosenGesture
+	string name
+	List<string> gestures
+Methods:
+	SetName()
+	ChooseGesture()
+
+Human : Player
+
+
+Computer : Player
+
+
+Game
+Member variables:
+	int roundResult
+
+Methods:
+	DisplayRules()
+	DetermineNumberOfPlayers()
+	CompareGestures()
+	DetermineRoundWinner()
+	DetermineGameWinner()
+	
