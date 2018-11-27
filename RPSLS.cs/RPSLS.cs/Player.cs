@@ -11,7 +11,7 @@ namespace RPSLS.cs
         public string name;
         public string chosenGesture;
         public List<string> gestures;
-        int score;
+        public int score;
         public Player()
         {
             gestures = new List<string> { "rock", "paper", "scissors", "lizard", "spock" };
@@ -33,29 +33,28 @@ namespace RPSLS.cs
             {
                 case "Rock":
                     Console.WriteLine("You selected Rock" + gestures);
-                    chosenGesture = "rock";
+                    chosenGesture = "Rock";
                     break;
                 case "Paper":
                     Console.WriteLine("You selected Paper" + gestures);
+                    chosenGesture = "Paper";
                     break;
                 case "Scissors":
                     Console.WriteLine("You selected Scissors" + gestures);
+                    chosenGesture = "Scissors";
                     break;
                 case "Lizard":
                     Console.WriteLine("You selected Lizard" + gestures);
+                    chosenGesture = "Lizard";
                     break;
                 case "Spock":
                     Console.WriteLine("You selected Spock" + gestures);
+                    chosenGesture = "Spock";
                     break;
 
             }
 
-
-
-
-
         }
-
 
     }
 }
