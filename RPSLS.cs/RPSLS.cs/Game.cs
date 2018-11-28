@@ -9,19 +9,19 @@ namespace RPSLS.cs
     internal class Game
     //member variables
     {
-        public int roundResult;
+        
         Player Player1;
         Player Player2;
-        private string input;
+
 
 
 
         //member methods
         public void DisplayRules()
         {
-
+            Console.WriteLine("How to play RPSLS: Rock crushes Scissors. Scissors cuts Paper. Paper covers Rock. Rock crushes Lizard. Lizard poisons Spock. Spock smashes Scissors. Scissors decapitates Lizard. Lizard eats Paper. Paper disproves Spock. Spock vaporizes Rock.");
+           
         }
-
         public void DetermineNumberOfPlayers()
         {
             Console.WriteLine("How many number of players?");
@@ -55,20 +55,23 @@ namespace RPSLS.cs
                     }
                     else if (randomNumber == 1)
                     {
-                        Console.WriteLine("You loose, Computer chose Paper. Paper disproves Rock.");
+                        Console.WriteLine("You lost, Computer chose Paper. Paper disproves Rock.");
+                        Player2.score++;
                     }
                     else if (randomNumber == 3)
                     {
-                        Console.WriteLine("You win, Computer chose Lizard. Rock crushes Lizard.");
-                    
+                        Console.WriteLine("You won! Computer chose Lizard. Rock crushes Lizard.");
+                        Player1.score++;
                     }
                     else if (randomNumber == 2)
                     {
-                        Console.WriteLine("You won, Computer chose Scissors. Rock crushes Scissors.");
+                        Console.WriteLine("You won! Computer chose Scissors. Rock crushes Scissors.");
+                        Player1.score++;
                     }
                     else if (randomNumber == 4)
                     {
                         Console.WriteLine("You lost, Computer chose Spock. Spock vaporizes Rock.");
+                        Player2.score++;
                     }
                     break;
 
@@ -80,20 +83,23 @@ namespace RPSLS.cs
                     else if (randomNumber == 0)
                     {
                         Console.WriteLine("You won! Computer chose Rock. Paper covers Rock.");
+                        Player1.score++;
                     }
                     else if (randomNumber == 2)
                     {
                         Console.WriteLine("You lost, Computer chose Scissors. Scissors cut Paper.");
-       
+                        Player2.score++;
                     }
                     else if (randomNumber == 3)
                     {
                         Console.WriteLine("You lost, Computer chose Lizard. Lizard eats paper.");
+                        Player2.score++;
                     }
-                
+
                     else if (randomNumber == 4)
                     {
                         Console.WriteLine("You won! Computer chose Spock. Paper disproves Spock.");
+                        Player1.score++;
                     }
                     break;
 
@@ -105,19 +111,22 @@ namespace RPSLS.cs
                     else if (randomNumber == 1)
                     {
                         Console.WriteLine("You won! Computer chose Paper. Scissors cuts Paper.");
+                        Player1.score++;
                     }
                     else if (randomNumber == 4)
                     {
                         Console.WriteLine("You lost, Computer chose Spock. Spock smashes Scissors.");
-                        
+                        Player2.score++;
                     }
                     else if (randomNumber == 3)
                     {
                         Console.WriteLine("You won! Computer chose Lizard. Scissors decapitates Lizard.");
+                        Player1.score++;
                     }
                     else if (randomNumber == 0)
                     {
                         Console.WriteLine("You lost, Computer chose Rock. Rock crushes Scissors.");
+                        Player2.score++;
                     }
                     break;
 
@@ -129,18 +138,22 @@ namespace RPSLS.cs
                     else if (randomNumber == 0)
                     {
                         Console.WriteLine("You lost, Computer chose Rock crushes Lizard");
+                        Player2.score++;
                     }
                     else if (randomNumber == 4)
                     {
                         Console.WriteLine("You won! Computer chose Spock. Lizard poisons Spock.");
+                        Player1.score++;
                     }
                     else if (randomNumber == 1)
                     {
                         Console.WriteLine("You won! Computer chose Paper. Lizard eats Paper.");
+                        Player1.score++;
                     }
                     else if (randomNumber == 2)
                     {
                         Console.WriteLine("You lost, Computer chose Scissors. Scissors decapitates Lizard");
+                        Player2.score++;
                     }
                     break;
 
@@ -152,24 +165,28 @@ namespace RPSLS.cs
                     else if (randomNumber == 3)
                     {
                         Console.WriteLine("You lost, Computer chose Lizard. Lizard poisons Spock.");
+                        Player2.score++;
                     }
                     else if (randomNumber == 2)
                     {
                         Console.WriteLine("You won! Computer chose Scissors. Spock smashes Scissors.");
+                        Player1.score++;
                     }
                     else if (randomNumber == 0)
                     {
                         Console.WriteLine("You won! Computer chose Rock. Spock vaporizes Rock.");
+                        Player1.score++;
                     }
                     else if (randomNumber == 1)
                     {
                         Console.WriteLine("You lost, Computer chose Paper. Paper disproves Spock.");
+                        Player2.score++;
                     }
                     break;
             }
         }
-        
-        public void DetermineRoundWinner(Player Player1, Player Player2)
+
+        public void DetermineRoundWinner()
         {
             Player1.score = 0;
             Player2.score = 0;
@@ -191,23 +208,35 @@ namespace RPSLS.cs
 
             }
         }
+        
 
-        public void DetermineGameWinner(Player Player1, Player Player2)
+        public void DetermineGameWinner()
         {
+            if (Player1.score <= Player2.score)
+            {
+                Console.WriteLine("Player 2 won RPSLS!");
             
+            }
+            else
+            {
+                Console.WriteLine("Player1 won RPSLS!");
+            }
         }
+
         public void RunGame()
         {
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
             Random randomNumber = new Random();
-            DisplayRules(); //the order of how the game should go
-            SetName();
+            DisplayRules();
             DetermineNumberOfPlayers();
+            Player1.SetName();
+            Player2.SetName();
 
-
-            
-          
-       
+            Player1.ChooseGesture();
+            Player2.ChooseGesture();
+            CompareGestures();
+            DetermineRoundWinner();
+            DetermineGameWinner();
         }
     }
-}
+ }
