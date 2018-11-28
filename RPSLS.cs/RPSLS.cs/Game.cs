@@ -52,6 +52,7 @@ namespace RPSLS.cs
                     if (randomNumber == 0)
                     {
                         Console.WriteLine("It's a tie, Computer also chose Rock.");
+                        Player1.score = Player2.score;
                     }
                     else if (randomNumber == 1)
                     {
@@ -79,6 +80,7 @@ namespace RPSLS.cs
                     if (randomNumber == 1)
                     {
                         Console.WriteLine("It's a tie, Computer also chose Paper.");
+                        Player1.score = Player2.score;
                     }
                     else if (randomNumber == 0)
                     {
@@ -107,6 +109,7 @@ namespace RPSLS.cs
                     if (randomNumber == 2)
                     {
                         Console.WriteLine("It's a tie, Computer also chose Scissors.");
+                        Player1.score = Player2.score;
                     }
                     else if (randomNumber == 1)
                     {
@@ -134,6 +137,7 @@ namespace RPSLS.cs
                     if (randomNumber == 3)
                     {
                         Console.WriteLine("It's a tie, Computer also chose Lizard.");
+                        Player1.score = Player2.score;
                     }
                     else if (randomNumber == 0)
                     {
@@ -161,6 +165,7 @@ namespace RPSLS.cs
                     if (randomNumber == 4)
                     {
                         Console.WriteLine("It's a tie, Computer chose Spock.");
+                        Player1.score = Player2.score;
                     }
                     else if (randomNumber == 3)
                     {
